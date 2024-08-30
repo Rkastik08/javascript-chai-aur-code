@@ -10,7 +10,7 @@ console.log(valueInNumber);
 // but when 33abc is the string then after convertion showing NaN.
 //for null 0, for undefined undefined itself.
 
-let isLoggedIn = 1
+let isLoggedIn = 1;
 
 let valueInNumber2 = Boolean(isLoggedIn)
 
