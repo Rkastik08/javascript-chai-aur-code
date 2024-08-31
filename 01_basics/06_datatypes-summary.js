@@ -35,4 +35,5 @@ const myFunction = function(){
 } //it is function
 
 console.log(typeof myFunction);
+console.log(typeof heros);
 
