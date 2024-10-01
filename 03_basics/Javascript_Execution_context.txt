@@ -1,0 +1,79 @@
+JAVASCRIPT EXECUTION CONTEXT
+
+{} => GLOBAL EXECUTION => `this` Keyword referes this.
+
+There are several Types of JAVASCRIPT EXECUTION CONTEXTs:-
+
+Mainly: 1. GLOBAL EXECUTION CONTEXT
+        2. FUNCTION EXECUTION CONTEXT
+
+OPTIONAL: 3. EVAL EXECUTION CONTEXT
+
+
+Phases of JAVASCRIPT file EXECUTION:-
+1. GLOBAL EXECUTION
+2. {} => Memory *Creation Phase* (Memory allocation)
+3. EXECUTION Phase (all the operations +-*/)
+
+Example code:-
+
+let val1 = 10
+let val2 = 5
+
+function addNum(num1,num2){
+    let total = num1 + num2
+    return total
+}
+
+let result1 = addnum(val1,val2)
+let result1 = addnum(10,5)
+
+
+Total execution phase of this code:-
+* Global Execution
+2. Memory phase =>
+
+    a. val1  = undefined
+    b. val2 = undefined
+    c. addNum = defination
+    d. result1 = undefined
+    e. result2 = undefined
+
+3. Execution Phase =>
+
+    a. val1 = 10
+    b. val2 = 8
+    c. addNum = new execution context =>
+                    1. new variable environment
+                    2. Execution thread
+
+                Memory phase=>
+                a. val1 = undefined
+                b. val2 = undefined
+                c. total = undefined
+
+                Execution phase =>
+
+                a. num1 = 10
+                b. num2 = 8
+                c. total = (10+8) = 18 [Returned to Global execution]
+
+
+3. Execution Phase (for second function call)=>
+
+    a. 10
+    b. 8
+    c. addNum = new execution context =>
+                    1. new variable environment
+                    2. Execution thread
+
+                Memory phase=>
+                a. val1 = undefined
+                b. val2 = undefined
+                c. total = undefined
+
+                Execution phase =>
+
+                a. num1 = 10
+                b. num2 = 8
+                c. total = (10+8) = 18 [Returned to Global execution]
