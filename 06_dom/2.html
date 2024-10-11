@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | 2.html</title>
+    
+</head>
+<body style="background-color: #212121;color: aliceblue;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <!-- Hi, counting child node lists --> 
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children[0].innerText) //for selecting all the children of the specific class.
+    
+    
+    // here HTMLCollection for loop can be Entered.
+
+    for (let i = 0; i < parent.children.length; i++) {
+        // console.log(parent.children[i].innerText);
+        
+    }
+
+    // parent.children[1].style.backgroundColor = "orange";
+    
+    // console.log(parent.firstElementChild);//for first child.
+    // console.log(parent.lastElementChild);//for fetching the last element of the parent.
+    
+    const dayOne = document.querySelector('.day')//will select the first "day" class element.
+
+    console.log(dayOne.parentElement);//referes to parent class directly
+    console.log(dayOne.nextElementSibling);//referes to the next child of the same parent.
+    console.log(dayOne.previousElementSibling);//referes to the previous child of the same parent.
+
+    console.log("Nodes: ",parent.childNodes);
+    
+    
+    
+</script>
+</html>
