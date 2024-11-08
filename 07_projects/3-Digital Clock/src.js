@@ -1,6 +1,6 @@
-const clock = document.getElementById('clock')
+const clock = document.querySelector('#clock')
 
-// const clock = document.getElementById('#clock')
+// const clock = document.queryselector('#clock')
 
 let date = new Date()
 
