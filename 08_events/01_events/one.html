@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div style="background-color: black;" >
+        <ul style="color: aliceblue;" id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li "><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" /*onclick="alert('owl')"not_scalable*/ src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: rgb(226, 219, 219);" href="https://google.com" id="google" >Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = () => {
+    //     alert('owl clicked')
+    // } //this also not approachable and less featured.
+
+    //most demanding and approachable and scalable method =>
+
+    // attachEvent(); time of internet explorer
+    // jquery frontend builder like react in past
+
+    //Points to be learnt:- type ; timestamp; preventDefault();  
+    //target, srcElement, toElement, currentTarget;
+    //clientX, clientY; offsets: screenX, screenY ;
+    //altkey, shiftkey, ctrlkey, keyCode 
+
+    // addEventListener(type, function, eventPropagation(true or [false] default))
+    //false (mostly used) is called 'Event Bubbling' and true is called "Event Capturing"
+
+    // document.getElementById('owl').addEventListener('click', (e) => {
+    //     console.log(e);
+        
+    // }, false)
+
+    // //studying event bubbling 
+
+    // document.getElementById('images').addEventListener('click', (e) => {
+    //     console.log("Clicked Ul");
+        
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', (e) => {
+    //     console.log("Clicked Owl");
+        
+    // }, false)
+
+    // //bubbling prevention
+
+    // document.getElementById('owl').addEventListener('click', (e) => {
+    //     console.log("Clicked Owl");
+    //     //this event will bubble up so to stop that =>
+    //     e.stopPropagation();
+    // }, false)
+
+    // prevent default example
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     console.log("Google clicked");  
+        
+    // }, false)
+
+
+    //events target parents:
+    document.querySelector('#images').addEventListener('click', (e) => {
+        console.log(e.target.parentNode);
+
+        const removeit = e.target.parentNode;
+        // removeit.remove()
+        // console.log(e.target.tagName)
+        
+        if(e.target.tagName === 'IMG'){
+            const removeit1 = e.target.parentNode
+            removeit1.remove()
+        }else{
+            e.preventDefault()
+            alert(e.target.tagName)
+        }
+    })
+
+    
+   
+
+    
+
+</script>
+</html>
