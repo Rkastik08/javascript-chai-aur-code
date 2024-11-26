@@ -1,0 +1,8 @@
+JAVASCRIPT (Default):- 
+    1. Synchronus (line by line one code will execute at once)
+
+    2. Single threaded (everything will execute in only one thread)
+    JAVASCRIPT engine is not alone it is always with runtime env like browser integration or node js etc.
+
+2. Execution Context:- 
+    

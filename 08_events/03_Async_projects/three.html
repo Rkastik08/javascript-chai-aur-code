@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Astik Codes</h1>
+    <button id="stop">stop</button>
+
+</body>
+<script>
+    const changeText = () => {
+        document.querySelector('h1').innerHTML = "Astik Works"
+    }
+
+    const sayAstik = () => {
+        console.log("Astik says");
+    }
+
+    const sayTime = setTimeout(sayAstik, 2900)
+    const changeTime = setTimeout(changeText, 2000)
+
+    // clearTimeout(changeTime)
+
+    //adding this clear timeout in an event here STOP button:-
+
+    document.querySelector('#stop').addEventListener('click', (e) => {
+        clearTimeout(sayTime)
+        console.log("Stopped");
+        
+    })
+</script>
+</html>
