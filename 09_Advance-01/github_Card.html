@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-Card</title>
+</head>
+<body style="background-color: grey;">
+    <div id="card" style="height: auto; width: 350px; background-color: #212121; text-align: center;">
+
+        <h1 style="color: aliceblue; text-align: center;">ID_Card</h1>
+        <img id="userImage" src="" alt="User Image" width="100px" height="100px">
+        <h2 id="name" style="color: aliceblue;"></h2>
+        <h2 id="userFollowers" style="color: aliceblue;"></h2>
+        <button id="GET" style="height: 30px; width: 50px; font-size: small;">Get id</button>
+    </div>
+</body>
+<script>
+    const xhr = new XMLHttpRequest()
+    const API = 'https://api.github.com/users/Rkastik08'
+    const button = document.getElementById('GET')
+
+    const userImage = document.getElementById('userImage')
+    const userName = document.getElementById('name')
+    const Followers = document.getElementById('userFollowers')
+    xhr.open('GET', API)
+
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            
+            const data = JSON.parse(xhr.responseText)
+            console.log(data)
+            const imageSRC = data.avatar_url
+            const name = data.name
+            const followers = String(data.followers)
+
+            button.addEventListener('click', (e) => {
+                userImage.src = imageSRC
+                userName.innerHTML = name
+                Followers.innerHTML = `Followers: ${followers}`
+            })
+        }
+    }
+    
+    xhr.send()
+    
+    
+    
+    
+</script>
+</html>
